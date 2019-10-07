@@ -2,7 +2,7 @@
     <v-app id="inspire">
         <v-navigation-drawer v-model="drawer" app>
             <v-list dense>
-                <v-list-item v-on:click="changePage('/', 'Home', false)">
+                <v-list-item v-on:click="changePage('/', 'Lecker Plattform', false)">
                     <v-list-item-action>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-action>
@@ -12,12 +12,29 @@
                 </v-list-item>
                 <v-list-item @click="changePage('/lieferant', 'Lieferanten', true)">
                     <v-list-item-action>
-                        <v-icon>mdi-contact-mail</v-icon>
+                        <v-icon>mdi-truck-fast</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
                         <v-list-item-title>Lieferanten</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
+                <v-list-item @click="changePage('/lieferant', 'Mein Profil', true)">
+                    <v-list-item-action>
+                        <v-icon>mdi-face-profile</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Mein Profil</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item @click="changePage('/lieferant', 'Datenschutz', true)">
+                    <v-list-item-action>
+                        <v-icon>mdi-file-document</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Datenschutzerklärung</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                
             </v-list>
         </v-navigation-drawer>
 
@@ -47,8 +64,8 @@ export default {
         source: String,
     },
     data: () => ({
-        drawer: null,
-        pageTitle: "Home", 
+        drawer: false,
+        pageTitle: "Lecker Plattform", 
         showAddLieferant: false,
         showForm: false,    
     }),
