@@ -5,7 +5,7 @@
                 <v-text-field v-model="lieferant.name" :counter="10" label="Name" required></v-text-field>
                 <v-text-field v-model="lieferant.ort" label="Ort" required></v-text-field>
                 <v-text-field v-model="lieferant.plz" label="Postleitzahl" required></v-text-field>
-                <v-btn color="success" class="mr-4" @click="addLieferantRemote">Hinzufügen</v-btn>
+                <v-btn color="success" class="mr-4" @click="addLieferant">Hinzufügen</v-btn>
                 <v-btn color="info" class="mr-4" @click="reset">Reset Form</v-btn>
             </v-form>
         </v-container>
@@ -17,7 +17,7 @@
                     sm="12"
                     md="4"
                     lg="3"
-                    v-for="(item, index) in lieferantenRemote"
+                    v-for="(item, index) in lieferanten"
                     v-bind:key="index"
                     v-bind:lieferant="item"
                 ></lieferant-card>
@@ -70,7 +70,7 @@ export default {
             }
         ]
     }),
-    mounted() {
+    /* mounted() {
         this.$http.get("http://localhost:8080/lieferant")
             .then(response => {
                 return response.json();
@@ -83,7 +83,7 @@ export default {
                 // eslint-disable-next-line
                 console.log(error);
             });
-    },
+    }, */
     methods: {
         sayHello: function() {
             return "";
@@ -103,7 +103,7 @@ export default {
             }),
                 this.reset();
         },
-        addLieferantRemote() {
+        /* addLieferantRemote() {
             this.$http.post("http://localhost:8080/lieferant", this.lieferant)
             .then(response => {
                 // eslint-disable-next-line
@@ -113,7 +113,7 @@ export default {
                 console.log(error);
             });
             this.reset();
-        }
+        } */
     }
 };
 </script>
